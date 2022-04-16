@@ -80,3 +80,38 @@ console.log(etWord);
 //     console.log("")
 //   }
 // }
+
+let phraseToCheck = "Was it a car or a cat I saw?";
+
+let abecedario = "aàáäbcçdeèéëfghiìíïjklmnñoòóöpqrstuùúüvwxyz"
+  let noChar = "";
+for (i = 0; i < phraseToCheck.length; i++) {
+  if (abecedario.includes(phraseToCheck[i]) || abecedario.toUpperCase().includes(phraseToCheck[i])){
+    noChar += phraseToCheck[i];
+  } else {
+    continue;
+  }
+}
+console.log(noChar);
+
+let palindro = "";
+let ifPalindro = "";
+  if (noChar[0].toLowerCase() !== noChar[noChar.length - 1].toLowerCase()){
+    ifPalindro = false;
+    console.log(`"${phraseToCheck}" is not a Palindrome.`);
+  } else {
+    for (j = 1; j < noChar.length; j++){
+    if (noChar[j].toLowerCase() !== noChar[noChar.length - (1 + j)].toLowerCase()) {
+      ifPalindro = false;
+      console.log(`"${phraseToCheck}" is not a Palindrome.`);
+      break;
+    } else {
+      palindro += noChar[j];
+      console.log(palindro);
+    }
+    }
+  };
+
+if (ifPalindro !== false) {
+  console.log(`"${phraseToCheck}" is a Palindrome.`);
+};
